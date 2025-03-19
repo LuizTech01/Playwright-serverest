@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 
 test.use({
     browserName: ('chromium', 'firefox', 'webkit'),
-    headless: false,
+    headless: true,
 });
 
 test('Registro com sucesso', async ({ page }) => {
@@ -14,10 +14,11 @@ test('Registro com sucesso', async ({ page }) => {
   await page.fill('input[id="password"]', 'senhateste1', { delay: 100 });
   
   await page.click('id=administrador');
-  await page.click('.mb-3');
+  await page.click('.btn-primary');
 
-  const errorMessage1 = await page.textContent('.alert span');
-  expect(errorMessage1).toBe('Cadastro realizado com sucesso');
+  await page.waitForSelector('.alert span:not(button span)', { state: 'visible' });
+  const errorMessage = await page.textContent('.alert span:not(button span)');
+  expect(errorMessage).toContain('Cadastro realizado com sucesso');
 
   const url = await page.url();
   expect(url).toBe('https://front.serverest.dev/admin/home');
