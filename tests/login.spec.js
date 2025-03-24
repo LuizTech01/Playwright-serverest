@@ -6,7 +6,7 @@ test.use({
     headless: true,
 });
 
-test.beforeEach(async ({ page }) => {
+/*test.beforeEach(async ({ page }) => {
     await page.goto('https://front.serverest.dev/cadastrarusuarios');
 
     await page.fill('input[id="nome"]', 'Nome Teste 2', { delay: 100 });
@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
     await page.waitForSelector('.alert span:not(button span)', { state: 'visible' });
     const errorMessage = await page.textContent('.alert span:not(button span)');
     expect(errorMessage).toContain('Cadastro realizado com sucesso');
-});
+});*/
 
 test('Login com sucesso', async ({ page }) => {
   await page.goto('https://front.serverest.dev/login');
