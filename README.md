@@ -25,7 +25,7 @@ Siga os passos abaixo para configurar e rodar o projeto localmente:
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
+   git clone https://github.com/LuizTech01/Playwright-serverest.git
    ```
 
 2. **Instale as dependências:**
@@ -66,3 +66,5 @@ Siga os passos abaixo para executar os testes de automação no seu ambiente:
    ```
 
    Isso executará os testes definidos no Playwright, automatizando as funcionalidades mencionadas no site.
+
+OBS: caso queira testar os arquivos de teste lembre-se de comentar o beforeEach ou excluir o usuario para evitar conflitos e consequentemente erros nos testes.
